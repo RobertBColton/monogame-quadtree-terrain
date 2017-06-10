@@ -385,7 +385,7 @@ namespace Quadtree_Terrain
             foreach (EffectPass pass in terrainEffect.CurrentTechnique.Passes)
             {
                 pass.Apply();
-                DrawQuadtree(rot);
+                DrawQuadtree(root);
             }
         }
 
