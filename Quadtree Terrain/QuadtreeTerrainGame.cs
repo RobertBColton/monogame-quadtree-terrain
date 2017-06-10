@@ -375,7 +375,8 @@ namespace Quadtree_Terrain
         /// <summary>
         /// Draws the terrain with with the custom effect.
         /// </summary>
-        protected void DrawTerrain(QuadtreeNode node)
+        /// <param name="root">The root node of the quadtree.</param>
+        protected void DrawTerrain(QuadtreeNode root)
         {
             terrainEffect.Parameters["WorldViewProjection"].SetValue(Matrix.Identity * view * projection);
             terrainEffect.Parameters["LightDirection"].SetValue(lightDirection);
@@ -384,7 +385,7 @@ namespace Quadtree_Terrain
             foreach (EffectPass pass in terrainEffect.CurrentTechnique.Passes)
             {
                 pass.Apply();
-                DrawQuadtree(node);
+                DrawQuadtree(rot);
             }
         }
 
