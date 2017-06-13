@@ -93,7 +93,7 @@ namespace Quadtree_Terrain
         SpriteFont hudfont;
 
         Matrix view = Matrix.CreateLookAt(new Vector3(-500, 500, -500), new Vector3(-499, 500, -499), Vector3.Up);
-        Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60), 1980f / 1080f, 2f, 8000f);
+        Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60), 1980f / 1080f, 2f, 5000f);
 
         bool wireframe = false;
         bool antiAliasing = false;
@@ -242,10 +242,10 @@ namespace Quadtree_Terrain
 
             VertexPositionTexture[] waterVertices = new VertexPositionTexture[4];
 
-            waterVertices[0] = new VertexPositionTexture(new Vector3(0, 10, 0), new Vector2(0, 0));
-            waterVertices[1] = new VertexPositionTexture(new Vector3(0, 10, 16000), new Vector2(0, 16000 / 2));
-            waterVertices[2] = new VertexPositionTexture(new Vector3(16000, 10, 0), new Vector2(16000 / 2, 0));
-            waterVertices[3] = new VertexPositionTexture(new Vector3(16000, 10, 16000), new Vector2(16000 / 2, 16000 / 2));
+            waterVertices[0] = new VertexPositionTexture(new Vector3(-8000, 10, -8000), new Vector2(0, 0));
+            waterVertices[1] = new VertexPositionTexture(new Vector3(-8000, 10, 8000), new Vector2(0, 16000 / 2));
+            waterVertices[2] = new VertexPositionTexture(new Vector3(8000, 10, -8000), new Vector2(16000 / 2, 0));
+            waterVertices[3] = new VertexPositionTexture(new Vector3(8000, 10, 8000), new Vector2(16000 / 2, 16000 / 2));
 
             waterVertexBuffer = new VertexBuffer(
                 GraphicsDevice, typeof(VertexPositionTexture), waterVertices.Length, BufferUsage.WriteOnly);
