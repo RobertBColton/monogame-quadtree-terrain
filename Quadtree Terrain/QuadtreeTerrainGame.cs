@@ -433,11 +433,11 @@ namespace Quadtree_Terrain
 
             spriteBatch.DrawString(
                 hudfont,
-                "FPS              : " + (1 / (float)gameTime.ElapsedGameTime.TotalSeconds) + "\n" +
+                "FPS              : " + (1f / gameTime.ElapsedGameTime.TotalSeconds) + "\n" +
                 "Wireframe     (Q): " + (wireframe ? "On" : "Off") + "\n" +
                 "Anti-aliasing (P): " + (antiAliasing ? "On" : "Off") + "\n" +
                 "Fullscreen    (F): " + (graphics.IsFullScreen ? "On" : "Off") + "\n" +
-                "Camera           : " + view.Translation.ToString() + " " + view.Rotation.ToString(),
+                "Camera           : " + view.Translation.ToString() + " " + view.Forward.ToString(),
                 new Vector2(10, 10),
                 Color.Black);
 
